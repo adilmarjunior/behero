@@ -28,26 +28,34 @@ export default function Logon() {
     }
 
     return (
-        <div className="logon-container">
-            <section className="form">
-                <img src={logo} alt="Be The Hero" />
+      <>  
+      <div class="container-button-right">
+        <Link to="/cases" className="button">
+              <FiLogIn size={16} color="#e02041" />
+              Casos cadastrados
+        </Link>
+      </div>
+      <div className="logon-container">
+        <section className="form">
+            <img src={logo} alt="Be The Hero" />
 
-                <form>
-                    <h1>Faça seu logon</h1>
-                    <input
-                        placeholder="Sua Id"
-                        value={id}
-                        onChange={e => setId(e.target.value)}
-                    />
-                    <button onClick={handleLogin} className="button" type="submit">Entrar</button>
+            <form>
+                <h1>Faça seu logon</h1>
+                <input
+                    placeholder="Sua Id"
+                    value={id}
+                    onChange={e => setId(e.target.value)}
+                />
+                <button onClick={handleLogin} className="button" type="submit">Entrar</button>
 
-                    <Link to="/register" className="back-link">
-                        <FiLogIn size={16} color="#e02041" />
-                        Não tenho cadastro
-                    </Link>
-                </form>
-            </section>
-            <img src={herosImg} alt="Heroes" />
-        </div>
+                <Link to="/register" className="back-link">
+                    <FiLogIn size={16} color="#e02041" />
+                    Não tenho cadastro
+                </Link>
+            </form>
+          </section>
+          <img src={herosImg} alt="Heroes" />
+      </div>
+      </>
     );
 }
